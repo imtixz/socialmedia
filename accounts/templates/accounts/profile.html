@@ -1,0 +1,28 @@
+{% extends 'master/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">{{ username }}</h2>
+          <p class="text-secondary">{{ email }}</p>
+        </div>
+
+		{% if owner %}
+			<a class="btn btn-secondary btn-small mt-1 mb-1" href='{% url "profile_edit" username %}'>Edit</a>
+		{% endif %}
+
+      </div class="content-section">
+      	<br><h3>Profile Info:</h3><br>
+      	<h4>Username:</h4>
+      	<p>{{ username }}</p>
+      	<h4>Your Full Name:</h4> 
+      	<p>{{ fullname }}<p>
+        <h4>Email:</h4> 
+        <p> {{ email }}</p>
+        <h4>Bio:</h4> 
+        <p>{{ bio }}</p>
+	</div>
+	
+{% endblock content %}
